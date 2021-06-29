@@ -1,0 +1,25 @@
+As part of this notebook, you are asked to: implement the kernel Perceptron algorithm in such a way that it allows either the quadratic or RBF kernel; train a classifier using this algorithm on 2-d data; and then display the resulting nonlinear decision boundaries. It will be helpful to think of this in two parts:
+
+1. Implementing kernel Perceptron.
+
+The algorithm is short and fully spelled out in lecture. The two kernel functions you will be using are the quadratic kernel
+
+k(x,z)=(1+x·z)2
+and the RBF kernel
+
+k(x,z)=exp(-?x-z?2/s2)
+2. Running the learning algorithm and displaying the results.
+
+Part of the notebook shows how to do this for kernel SVM, and you can pretty much use this same subroutine. If you are having trouble understanding the code, the idea is this: it first chooses a particular region of the 2-d plane to display, based on the bounding box of the data set; then it puts a very fine grid on this rectangular region (sort of pixelizing it); it evaluates the classifier at every grid point (pixel); and then it shows the decision regions by coloring each pixel in the rectangle according to the prediction at that location.
+
+In week 3's assignment Gaussian generative models for handwritten digit recognition, you saw how to load the MNIST data set of handwritten digits and build a basic classifier for it. It is now time to try using an SVM for this problem.
+
+Create a new Jupyter notebook to do the following.
+
+Load in the MNIST data (the training set of 60,000 points and the test set of 10,000 points).
+Learn a linear SVM classifier using sklearn.svm.LinearSVC, setting loss='hinge'. Try different values C=0.01,0.1,1.0,10.0,100.0. Find the training error and test error in each case.
+Then try kernel SVM with a quadratic kernel. For this you can use sklearn.svm.SVC, setting kernel='poly' and degree=2. Just try the setting C=1.0.
+
+Then answer the questions below.
+
+https://learning.edx.org/course/course-v1:UCSanDiegoX+DSE220x+1T2021/block-v1:UCSanDiegoX+DSE220x+1T2021+type@sequential+block@0805ae7948b94c23b77840ecb8153956/block-v1:UCSanDiegoX+DSE220x+1T2021+type@vertical+block@c645e548dcc94809b8cbca7347e2b3ab
